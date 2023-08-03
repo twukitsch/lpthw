@@ -15,7 +15,7 @@ prompt_OpenArgs = """Choose from the following list:
       a = append (add to end of file)
       w = completely overwrite the file with new text
       x = create a new file and open it for writing
-      r = open in read only
+      r = open in read only format
       add a '+' after the letter to open in read & write mode"""
 
 OpenArgs = ['a', 'w', 'x', 'r', 'r+', 'a+', 'w+', "x+"]
