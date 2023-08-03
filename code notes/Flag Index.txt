@@ -1,0 +1,13 @@
+(!f ...) -  A function related flag.
+
+            (!f Potential Function) indicates a set of code amenable to becoming a function.
+            Search for this flag to find good practice code for function creation.
+
+(!-----) -  A bookmark or leave-off point flag.
+
+            Indicates unfinished code.
+
+(!err)   -  An unresolved error flag.
+
+            Flags a section of code with an error that has yet to be resolved. Typically it is followed by
+            an explanation of the error itself.
