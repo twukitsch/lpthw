@@ -1,3 +1,6 @@
+# The interface is just begging to be turned into a function here
+# (!f Potential Function)
+
 from sys import argv
 
 script, filename = argv
@@ -11,9 +14,11 @@ input("?")
 prompt_OpenArgs = """Choose from the following list:
       a = append (add to end of file)
       w = completely overwrite the file with new text
-      x = create a new file and open it for writing"""
+      x = create a new file and open it for writing
+      r = open in read only
+      add a '+' after the letter to open in read & write mode"""
 
-OpenArgs = ['a', 'w', 'x']
+OpenArgs = ['a', 'w', 'x', 'r', 'r+', 'a+', 'w+', "x+"]
 
 exitLoop = False
 while exitLoop != True:
@@ -35,6 +40,31 @@ while exitLoop != True:
             print("Creating and opening a new file...")
             target = open(filename, out_OpenArgs)
             exitLoop = True
+
+        if out_OpenArgs == 'r':
+            print("Opening file in read-only mode...")
+            target = open(filename, out_OpenArgs)
+            exitLoop = True
+
+        if out_OpenArgs == 'a+':
+            print("Opening the file to append & read...")
+            target = open(filename, out_OpenArgs)
+            exitLoop = True
+
+        if out_OpenArgs == 'w+':
+            print("Opening the file and overwriting; read enabled...")
+            target = open(filename, out_OpenArgs)
+            exitLoop = True
+
+        if out_OpenArgs == 'x+':
+            print("Creating and opening a new file with read enabled...")
+            target = open(filename, out_OpenArgs)
+            exitLoop = True
+
+        if out_OpenArgs == 'r+':
+            print("Opening file with read and write enabled...")
+            target = open(filename, out_OpenArgs)
+            exitLoop = True
     else:
         print("\nERROR. You must chose one of the values from the list.\nIt should be a single letter\n\a")
 
@@ -45,20 +75,20 @@ while exitLoop != True:
 # target.truncate()
 # Yes, truncate is redundant and unneccesary. If 'w' argument wasn't present in the open() function it would have worked.
 
-print("Now Im going to ask you for three lines.")
+print("Please input three lines of text.")
 
 line1 = input("line1: ")
 line2 = input("line2: ")
 line3 = input("line3: ")
 
-print("I'm going to write these to the file.")
+print("Writing these to the file.\n\n")
 
-target.write(line1)
-target.write("\n")
-target.write(line2)
-target.write("\n")
-target.write(line3)
-target.write("\n")
+target.write(f"{line1}\n{line2}\n{line3}\n")
+
+# Read the file
+print("File Contents:\n")
+target = open(filename, 'r')
+print(target.read())
 
 print("And finally, we close it.")
 # Saves the file stored in the "target" object.

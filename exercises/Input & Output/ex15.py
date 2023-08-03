@@ -4,7 +4,7 @@ from sys import argv
 # Lists variables, in order, to be named in command line
 script, filename = argv
 
-# Open the file and return it to an object called 'txt'
+# Open the file and return it (store it) to an object called 'txt'
 txt = open(filename)
 
 print(f"Here's your file {filename}:")
@@ -21,3 +21,6 @@ file_again = input("> ")
 txt_again = open(file_again)
 # Uses the read function on txt_again without any additional arguments (uses defaults)
 print(txt_again.read())
+
+txt.close()
+txt_again.close()
