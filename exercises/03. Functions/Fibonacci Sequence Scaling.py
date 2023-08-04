@@ -1,5 +1,6 @@
 # Scaling Fibonacci's Sequence
 
+# Takes any input for scale_factor (percent, float, integer)
 # Displays correct number of decimal places
 # Displays correct number of leading zeros depending on the max number length
 
@@ -26,13 +27,13 @@ def fib_scale():
         return [0, 1]
     # Start the sequence off
     fib_seq = [0, 1]
-    # Start Loop to calculate new values of sequence
+    # Start Loop to calculate next values of sequence
     for i in range(2, n_seq):
-        next_num = fib_seq[-1] + fib_seq[-2]
-        fib_seq.append(next_num)
+        next_val = fib_seq[-1] + fib_seq[-2]
+        fib_seq.append(next_val)
 
     # Apply scaling factor to sequence
-    scaled_seq = [n * scale_factor for n in fib_seq]
+    scaled_seq = [val * scale_factor for val in fib_seq]
 
     # Ensure it will work with float and integers
 
